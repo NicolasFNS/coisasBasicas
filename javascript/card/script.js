@@ -21,8 +21,8 @@ function exibirconts() {
         const card = document.createElement('section');
         card.className = 'card-cont';
         card.innerHTML = `
-            <img src="${ cont.imagem }" alt="${ cont.nome }">
             <h1>${ cont.nome }</h1>
+            <p>${ cont.descricao }</p>
         `;
 
         contCards.appendChild(card);
