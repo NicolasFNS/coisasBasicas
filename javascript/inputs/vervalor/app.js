@@ -1,8 +1,10 @@
 const num = document.getElementById('input');
+const vis = document.getElementById('visor');
 
 function mostraNum(){
     num.oninput = () => {
         console.log("num:"+ num.value);
+        vis.innerHTML = num.value;
     };
 }
 
