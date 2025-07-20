@@ -1,0 +1,1 @@
+apenas lê o valor, mostra ele e faz uma contagem regressiva no log
