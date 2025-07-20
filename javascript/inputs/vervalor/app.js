@@ -32,8 +32,8 @@ btncor.forEach(function(button) {
         const cor = this.classList;
         //button.style.color = cor;
 
-        btncor.forEach(function(btn){
-            btn.style.color = cor;
+        btncor.forEach(function(botao){
+            botao.style.color = cor;
         });
         //tem que ter outro foreach por que o primeiro é para adicionar uma função para cada botão, mas as alterações valem apenas naquela execução de click naquele item específico (a função de click é vista como individual para cada), então se quiser fazer algo que afete mútiplos terá que dizer novamente para fazer em um por um
     });
@@ -67,6 +67,10 @@ btncor.forEach(function(button) {
     //também funciona com this.id/name se o id ou name tiver nome de cor
     const visor = document.getElementById("visor");
     visor.style.color = cor;
+
+    //console.log(button.textContent)
+    //loga o conteúdo do botão (foi apenas um teste)
+
   });
 });
 //muda a cor do texto do "visor"
