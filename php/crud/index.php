@@ -56,7 +56,7 @@
           echo "<td>";
           echo "<form method='post' action='deleta.php'>";
           echo "<input type='hidden' id='excluir_da_lista' name='excluir_da_lista' value='" . htmlspecialchars($row["id"]) . "'>";
-          echo "<input type='submit' name='enviar_listado' value='Apagar'>";
+          echo "<input type='submit' name='exluir_listado' value='Apagar'>";
           echo "</form>";
           echo "</td>";
           echo "</tr>";
