@@ -49,6 +49,24 @@ if (isset($_POST['excluir_listado'])) {
   //prepare faz os dados serem tratados apenas como valores, não comandos assim evitando sql injection
   //""s", excluir" indica para usar a variável excluir como uma string
   $sql = $conn->prepare("DELETE FROM usuarios WHERE id = ?");
+  $sql->bind_param("i", $excluir_da_lista);
+  
+  if ($sql->execute() === TRUE) {
+      header("location: index.php");
+  } else {
+      echo "Erro: " . $conn->error;
+  }
+
+  $sql->close();
+}
+
+//ação de excluir dados do banco
+if (isset($_POST['enviar_excluir'])) {
+  $excluir = $_POST['excluir'];
+  
+  //prepare faz os dados serem tratados apenas como valores, não comandos assim evitando sql injection
+  //""s", excluir" indica para usar a variável excluir como uma string
+  $sql = $conn->prepare("DELETE FROM usuarios WHERE nome = ?");
   $sql->bind_param("s", $excluir);
   
   if ($sql->execute() === TRUE) {
@@ -59,6 +77,7 @@ if (isset($_POST['excluir_listado'])) {
 
   $sql->close();
 }
+
 
 
 $conn->close();
