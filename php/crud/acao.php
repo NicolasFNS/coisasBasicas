@@ -49,7 +49,7 @@ if (isset($_POST['excluir_listado'])) {
   //prepare faz os dados serem tratados apenas como valores, não comandos assim evitando sql injection
   //""s", excluir" indica para usar a variável excluir como uma string
   $sql = $conn->prepare("DELETE FROM usuarios WHERE id = ?");
-  $sql->bind_param("i", $excluir_da_lista);
+  $sql->bind_param("i", $excluir);
   
   if ($sql->execute() === TRUE) {
       header("location: index.php");
