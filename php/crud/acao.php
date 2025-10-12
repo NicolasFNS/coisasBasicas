@@ -1,5 +1,22 @@
 <?php //ações gerais do crud
 
+/*
+juntei todas as ações por facilidade, mas se precisar separar tudo, apenas separe os arquivos 
+e coloque o nome dos arquivos no "action" da tag "<form>" repetindo a estrutura básica de:
+
+require("conectar.php");
+//tratamento de erro de conexão ($conn é um dos padrões da linguagem
+if ($conn->connect_error) {
+  die("Conexão falhou: " . $conn->connect_error);
+}
+
+**ações**
+
+$sql->close();
+$conn->close();
+
+*/
+
 // "conecta" ao conectar.php (como se inserisse o conteúdo de um arquivo PHP dentro de outro)
 require("conectar.php");
 //tratamento de erro de conexão ($conn é um dos padrões da linguagem
@@ -77,8 +94,6 @@ if (isset($_POST['enviar_excluir'])) {
 
   $sql->close();
 }
-
-
 
 $conn->close();
 
