@@ -9,7 +9,7 @@
 </head>
 <body>
   
-  <form class="form" method="post" action="adiciona.php">
+  <form class="form" method="post" action="acao.php">
     <div class="field">
 
       <label for="nome">Seu Nome:</label>
@@ -54,9 +54,9 @@
           echo "<td>" . htmlspecialchars($row["nascimento"]) . "</td>";
           echo "<td>" . htmlspecialchars($row["id"]) . "</td>";
           echo "<td>";
-          echo "<form method='post' action='deleta.php'>";
+          echo "<form method='post' action='acao.php'>";
           echo "<input type='hidden' id='excluir_da_lista' name='excluir_da_lista' value='" . htmlspecialchars($row["id"]) . "'>";
-          echo "<input type='submit' name='exluir_listado' value='Apagar'>";
+          echo "<input type='submit' name='excluir_listado' value='Apagar'>";
           echo "</form>";
           echo "</td>";
           echo "</tr>";
