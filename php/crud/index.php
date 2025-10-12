@@ -55,8 +55,8 @@
           echo "<td>" . htmlspecialchars($row["id"]) . "</td>";
           echo "<td>";
           echo "<form method='post' action='deleta.php'>";
-          echo "<input type='hidden' id='excluir' name='excluir' value='" . htmlspecialchars($row["id"]) . "'>";
-          echo "<input type='submit' value='Apagar'>";
+          echo "<input type='hidden' id='excluir_da_lista' name='excluir_da_lista' value='" . htmlspecialchars($row["id"]) . "'>";
+          echo "<input type='submit' name='enviar_excluir' value='Apagar'>";
           echo "</form>";
           echo "</td>";
           echo "</tr>";
