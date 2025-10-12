@@ -65,7 +65,8 @@ if (isset($_POST['excluir_listado'])) {
   $excluir = $_POST['excluir_da_lista'];
   
   //prepare faz os dados serem tratados apenas como valores, não comandos assim evitando sql injection
-  //""s", excluir" indica para usar a variável excluir como uma string
+  //""i", excluir" indica para usar a variável excluir como um inteiro
+  // i é para inteiro, s = String e por aí segue
   $sql = $conn->prepare("DELETE FROM usuarios WHERE id = ?");
   $sql->bind_param("i", $excluir);
   
@@ -82,8 +83,6 @@ if (isset($_POST['excluir_listado'])) {
 if (isset($_POST['enviar_excluir'])) {
   $excluir = $_POST['excluir'];
   
-  //prepare faz os dados serem tratados apenas como valores, não comandos assim evitando sql injection
-  //""s", excluir" indica para usar a variável excluir como uma string
   $sql = $conn->prepare("DELETE FROM usuarios WHERE nome = ?");
   $sql->bind_param("s", $excluir);
   
