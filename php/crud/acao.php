@@ -2,7 +2,8 @@
 
 /*
 juntei todas as ações por facilidade, mas se precisar separar tudo, apenas separe os arquivos 
-e coloque o nome dos arquivos no "action" da tag "<form>" repetindo a estrutura básica de:
+e coloque o nome do arquivo que irá agir naquele formulário dentro do "action" da tag "<form>" 
+repetindo a estrutura básica de:
 
 require("conectar.php");
 //tratamento de erro de conexão ($conn é um dos padrões da linguagem
