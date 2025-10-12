@@ -43,11 +43,17 @@ if (isset($_POST['enviar'])) {
       echo "Erro: A renda deve conter apenas valores numéricos válidos.";
       exit;
   }
-  
+
+  //formata data para o formato ano, mês e dia (string to time)
   $data_formatada = date("Y-m-d", strtotime($nascimento));
+  //substitui virgulas por ponto da variável renda e armazena
   $renda_formatada = str_replace(',', '.', $renda);
+  //até agora apenas strings foram manipuladas, aqui será feita a conversão de string para float
   $renda_formatada = floatval($renda_formatada);
-  
+
+  //prepare faz os dados serem tratados apenas como valores, não comandos assim evitando sql injection
+  //"sds" etc. indica para usar as variáveis mencionadas como seus respectivos tipos no banco
+  // i é para inteiro, s = String, d = double e por aí segue
   $sql = $conn->prepare("INSERT INTO usuarios (nome, renda, nascimento) VALUES (?, ?, ?)");
   $sql->bind_param("sds", $nome, $renda_formatada, $data_formatada);
   
@@ -64,9 +70,6 @@ if (isset($_POST['enviar'])) {
 if (isset($_POST['excluir_listado'])) {
   $excluir = $_POST['excluir_da_lista'];
   
-  //prepare faz os dados serem tratados apenas como valores, não comandos assim evitando sql injection
-  //""i", excluir" indica para usar a variável excluir como um inteiro
-  // i é para inteiro, s = String e por aí segue
   $sql = $conn->prepare("DELETE FROM usuarios WHERE id = ?");
   $sql->bind_param("i", $excluir);
   
