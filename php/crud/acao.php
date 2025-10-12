@@ -43,12 +43,12 @@ if (isset($_POST['enviar'])) {
 }
 
 //ação de excluir dados do banco
-if (isset($_POST['enviar_excluir'])) {
-  $excluir = $_POST['excluir'];
+if (isset($_POST['excluir_listado'])) {
+  $excluir = $_POST['excluir_da_lista'];
   
   //prepare faz os dados serem tratados apenas como valores, não comandos assim evitando sql injection
   //""s", excluir" indica para usar a variável excluir como uma string
-  $sql = $conn->prepare("DELETE FROM usuarios WHERE nome = ?");
+  $sql = $conn->prepare("DELETE FROM usuarios WHERE id = ?");
   $sql->bind_param("s", $excluir);
   
   if ($sql->execute() === TRUE) {
