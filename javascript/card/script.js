@@ -1,3 +1,4 @@
+//informações que ficam em cada card
 const conts = [
     {
         nome: "Sample Games",
@@ -13,6 +14,7 @@ const conts = [
     }
 ];
 
+//insere o html dos cards
 function exibirconts() {
     const contCards = document.getElementById('conts');
 
