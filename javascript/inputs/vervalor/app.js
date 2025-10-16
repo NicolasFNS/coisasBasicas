@@ -38,6 +38,7 @@ btncor.forEach(function(button) {
     });
 });
 */
+//o código acima muda a cor do texto do botão selecionado
 
 /*
 btncor.forEach(function(button) {
@@ -47,7 +48,7 @@ btncor.forEach(function(button) {
     });
 });
 */
-//o código acime muda a cor do texto do botão selecionado
+//o código acima muda a cor do texto do botão selecionado
 
 btncor.forEach(function(button) {
   button.addEventListener("click", function() {
