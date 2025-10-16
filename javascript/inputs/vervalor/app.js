@@ -24,7 +24,6 @@ btn.onclick = function() {
     }
 }
 //apenas para exemlplo, também dá para usar "btn.addEventListener ("click", function() {"
-//na linha 16
 
 /*
 btncor.forEach(function(button) {
