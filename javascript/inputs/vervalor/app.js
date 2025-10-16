@@ -48,7 +48,7 @@ btncor.forEach(function(button) {
     });
 });
 */
-//muda a cor do texto do botão selecionado
+//o código acime muda a cor do texto do botão selecionado
 
 btncor.forEach(function(button) {
   button.addEventListener("click", function() {
@@ -61,7 +61,7 @@ btncor.forEach(function(button) {
     const cor = this.classList [0];
     //necessário por ter adicionado uma palavra, se não colocar o retorno da variável cor será, por exemplo, "blue active"
     */
-    //o código acima é uma alternatica para caso você precise selecionar apenas o que está ativo
+    //o código acima é uma alternatica para caso você precise selecionar apenas o que está ativo no futuro
 
     const cor = this.classList;
     //também funciona com this.id/name se o id ou name tiver nome de cor
