@@ -66,7 +66,6 @@
       }
 
       $conn->close();
-        //eu também poderia deixar em um arquivo separado, e apenas deixar esse como puro html
     ?>
   </table>
 
