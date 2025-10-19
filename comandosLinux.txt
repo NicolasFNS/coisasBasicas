@@ -1,0 +1,40 @@
+comando /* o que faz */ - /* exemplo1 */ - /* exemplo2 */...
+  /* detalhes exemplo1 */
+  
+  /* detalhes exemplo2 */
+
+ls /* lista os arquivos e diretórios no diretório atual */
+
+cd /* navega pelos diretórios */ - /* cd /home/usuario/diretorio */
+
+mkdir /* criar um novo diretório */ - /* mkdir novo_diretorio */ - /* mkdir /home/usuario/novo_diretorio */
+
+rm /* remove arquivos ou diretórios */ - /* rm diretorio */ - /* rm /home/usuario/diretorio */
+  /*os arquivos e diretórios excluídos não vão para a lixeira e são removidos permanentemente */
+
+cp /* copia arquivos e diretórios */ - /* cp arquivo.txt /diretorio_destino */ /* cp diretorio /diretorio_destino */
+
+mv /* move ou renomeia arquivos e diretórios */ - /* mv arquivo.txt novo_nome.txt */ - /* mv diretorio /diretorio_destino */
+
+touch /* cria um arquivo vazio ou atualiza a data de modificação de um arquivo existente*/ - /* touch arquivo.txt */
+
+cat /* exibe o conteúdo de um arquivo */ - /* cat arquivo.txt */
+
+grep /* pesquisa por padrões em arquivos ou saída de comandos */ - /* grep “palavra” arquivo.txt */
+
+chmod /* modifica as permissões de acesso de arquivos e diretórios */ - /* chmod u=rwx, g=rw, o=r arquivo.sh */ /* chmod 755 arquivo.sh */
+  /* rwx quer dizer read, write e execute, são as permissôes e as letras são os 3 tipos de usuário: User, Group e Other */
+  
+  /* os 3 números representam os usuários que mencionei na mesma sequência do anterior U, G e O 
+  e o valor é o nível de permissão: 0 = sem permissão, 1 = somente execução, 2 = somente grava e 4 = somente ler
+  para ter mais de uma permissão em um grupo, some os valores das permissões, por exemplo 3 = ler e gravar ou 5 = executar e ler */
+
+find /* Localiza arquivos e diretórios com base em critérios especificados, como nome, tipo, tamanho etc */ - /* find /diretorio -name “*.txt” */
+
+locate /* Localiza arquivos por nome */ - /* locate arquivo.txt */
+
+diff /* Compara o conteúdo linha por linha e exibe as diferenças */ - /* diff arquivo1.txt arquivo2.txt */
+
+ifconfig /* Exibe e configura interfaces de rede, mostrando informações como endereço IP, máscara de subrede e status da interface */
+
+  
