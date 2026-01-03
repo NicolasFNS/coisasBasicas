@@ -22,7 +22,7 @@ public class FakeBinary {
             char digit = numberString.charAt(i); //pega o dígito
             int num = Character.getNumericValue(digit); //converte para número para poder fazer a comparação de valor
 
-            if (num < 5) {
+            if (num <= 5) {
                 result.append('0');
             } else {
                 result.append('1');
