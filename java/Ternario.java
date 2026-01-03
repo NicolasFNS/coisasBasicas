@@ -10,12 +10,12 @@
 public class Ternario {
   public static String tern() {
     String numeros = "09091728307108237097374356345";
-    char c[] = numeros.toCharArray();
+    char c[] = numeros.toCharArray(); //cria um array com base na outra (fácil para alterar os valores)
     
     for (int i = 0; i < c.length; i++){
-      c[i] = c[i] < '5' ? '0' : '1';
+      c[i] = c[i] < '5' ? '0' : '1'; //processo que decide se vai ser 0 ou 1
     }
     
-    return new String(c);
+    return new String(c); //envia o resultado como uma nova string
   }
 }
