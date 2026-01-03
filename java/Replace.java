@@ -20,7 +20,7 @@ public class FakeBinary {
         for (int i = 0; i < numberString.length(); i++) {
         
             char digit = numberString.charAt(i); //pega o dígito
-            int num = Character.getNumericValue(digit); //converte para número
+            int num = Character.getNumericValue(digit); //converte para número para poder fazer a comparação de valor
 
             if (num < 5) {
                 result.append('0');
@@ -29,7 +29,7 @@ public class FakeBinary {
             }
         }
 
-        return result.toString();
+        return result.toString(); //o desafio precisava verificar uma string
     }
 }
 
