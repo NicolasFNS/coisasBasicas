@@ -15,7 +15,7 @@ double b9 = 3.14159;
 String b10 = String.format("%.2f", b9); //o "%.2f" limita as casas decimais para apenas duas, retornando "3.14"
 
 String b11 = "Java";
-char[] b12 = b11.toCharArray();
+char[] b12 = b11.toCharArray();//string para cadeia de caracteres
 String b13 = new String(b12);
 
 boolean b14 = Boolean.parseBoolean("true");
