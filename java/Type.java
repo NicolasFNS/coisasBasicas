@@ -2,6 +2,15 @@
 double a1 = 9.7;
 int a2 = (int) a1; // double -> int (perde a parte decimal)
 
+//string -> int
+String str = "teste";
+int num = Integer.parseInt(str);
+
+int hexa = Integer.decode("0xFF");//retorna strings em formato hexadecimal, o resultado será 255
+
+Scanner scanner = new Scanner("123");
+int num = scanner.nextInt();
+
 //varios -> String
 Integer b1 = 10;
 String b2 = b1.toString();
