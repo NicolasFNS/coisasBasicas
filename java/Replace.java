@@ -10,6 +10,11 @@ public class FakeBinary {
     return novo;
   }
 }
+/* 
+o código acima muda os números de 0 a 4 e de 5 a 0
+com letras, como por exemplo vogais maiúsculas e minúsculas dá para fazer assim:
+return str.replaceAll("[aeiouAEIOU]", "");
+*/
 
 /*
 pode servir como removedor de espaços com return x.replace(" ","");
