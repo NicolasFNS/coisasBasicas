@@ -11,6 +11,11 @@ public class FakeBinary {
   }
 }
 
+/*
+pode servir como removedor de espaços com return x.replace(" ","");
+mas se quiser remover apenas o espaços do começo e fim, use x.trim();
+*/
+
 /* acima é um exemplo mais simplificado, mas para prática geral pode ser melhor conhecer o processo
 
 public class FakeBinary {
