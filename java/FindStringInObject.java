@@ -12,3 +12,13 @@ public class Kata {
     return "not found";
   }
 }
+
+/* também poderia ser usado o seguinte código 
+
+public class Kata {
+  public static String findNeedle(Object[] haystack) {
+    return String.format("found the needle at position %d", java.util.Arrays.asList(haystack).indexOf("needle"));
+  }
+}
+
+*/
