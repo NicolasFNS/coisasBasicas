@@ -1,4 +1,4 @@
-public class Kata {//desafio que retorna true se o "ending" estiver no fim de "str"
+public class CharAt {//desafio que retorna true se o "ending" estiver no fim de "str"
   public static boolean solution(String str, String ending) {
     if (ending.length() > str.length()) {//o desafio mostrou o erro "String index out of range: -1", esse if evita que o "ending" seja maior que "str"
       return false;
