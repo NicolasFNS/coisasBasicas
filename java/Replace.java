@@ -2,7 +2,7 @@
 desafio básico do codewars:
 "Given a string of digits, you should replace any digit below 5 with '0' and any digit 5 and above with '1'. Return the resulting string."
 */
-public class FakeBinary {
+public class Replace {
   public static String fakeBin(String numberString) {
     
     String novo = numberString.replaceAll("[0-4]","0").replaceAll("[5-9]", "1");
@@ -23,7 +23,7 @@ mas se quiser remover apenas o espaços do começo e fim, use x.trim();
 
 /* acima é um exemplo mais simplificado, mas para prática geral pode ser melhor conhecer o processo
 
-public class FakeBinary {
+public class Replace {
     public static String fakeBin(String numberString) {
         StringBuilder result = new StringBuilder(); //construtor da nova string (para poder usar o append)
 
