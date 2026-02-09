@@ -1,6 +1,6 @@
 //desafio pediu uma função que retorna a forma maiuscula de uma string
 
-class Upper {
+public class ToUpperCase {
   
   public static String makeUpperCase(String str) {//tudo maiúsculo
     return str.toUpperCase();
