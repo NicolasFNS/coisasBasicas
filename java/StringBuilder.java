@@ -5,7 +5,7 @@ como por exemplo um algoritmo que inverte strings
 */
 
 //o que eu fiz no desafio do codewars
-public class Kata {
+public class StringBuilder {
   public static String solution(String str) {
     StringBuilder letra = new StringBuilder();
     
@@ -18,7 +18,7 @@ public class Kata {
 }
 
 /*o que eu poderia ter feito
-public class Kata {
+public class StringBuilder {
 
   public static String solution(String str) {
     return new StringBuilder(str).reverse().toString();
