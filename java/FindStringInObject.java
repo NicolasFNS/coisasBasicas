@@ -1,6 +1,6 @@
 //o objetivo era encontrar a palavra "needle" em haystack
 
-public class Kata {
+public class FindStringInObject {
   public static String findNeedle(Object[] haystack) {
     
     for (int i = 0; i < haystack.length; i++) {
@@ -15,7 +15,7 @@ public class Kata {
 
 /* também poderia ser usado o seguinte código 
 
-public class Kata {
+public class FindStringInObject {
   public static String findNeedle(Object[] haystack) {
     return String.format("found the needle at position %d", java.util.Arrays.asList(haystack).indexOf("needle"));
   }
