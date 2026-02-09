@@ -1,6 +1,6 @@
 //Completar as funções quadradas, quando cada número passa (na lista "n"), o código multiplica por ela mesma e soma todos os resulados
 
-public class Kata{
+public class ForEach{
   
   public static int squareSum(int[] n){ 
     int vari = 0;
