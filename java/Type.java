@@ -11,6 +11,13 @@ int hexa = Integer.decode("0xFF");//retorna strings em formato hexadecimal, o re
 Scanner scanner = new Scanner("123");
 int num = scanner.nextInt();
 
+//char -> int
+char c = '7';
+int digitValue = Character.getNumericValue(c);
+
+char c = 'A';
+int asciiValue = (int) c; // Resultado: 65
+
 //varios -> String
 Integer b1 = 10;
 String b2 = b1.toString();
