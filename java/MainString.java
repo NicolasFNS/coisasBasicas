@@ -1,4 +1,4 @@
-public class SortAndStar {
+public class SortArray {
 
     public static String twoSort(String[] s) {
         java.util.Arrays.sort(s);
@@ -118,7 +118,7 @@ public class ToUpperCase {
 //desafio pediu uma função que retorna uma string com letra maiúscula (não tinha entendido se era completa ou apenas a primeira letra
 
 ///////////////////////////
-public class CharProblem {
+public class InputSplit {
   public static int howOld(String input) { 
     String[] partes = input.split(" "); 
     return Integer.parseInt(partes[0]); 
