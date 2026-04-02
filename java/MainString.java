@@ -74,3 +74,45 @@ public class Replace {
     }
 }
 */
+
+////////////////////////////
+public class StringBuilder {
+  public static String solution(String str) {
+    StringBuilder letra = new StringBuilder();
+    
+    for(int i = str.length() - 1; i >= 0; i--){
+      letra.append(str.charAt(i));
+    }
+    
+    return letra.toString();
+  }
+}
+//desafio era apenas inverter a string
+/*o que eu poderia ter feito
+public class StringBuilder {
+
+  public static String solution(String str) {
+    return new StringBuilder(str).reverse().toString();
+  }
+
+}
+*/
+
+/////////////////////////
+public class ToUpperCase {
+  
+  public static String makeUpperCase(String str) {//tudo maiúsculo
+    return str.toUpperCase();
+  }
+
+  public static String capitalizeFirstTrim(String s) {//coloca uma letra maiúscula no começo
+    if (s == null) return null;//evita NullPointerException
+
+    s = s.trim();//remove espaço em branco do começo e fim
+    if (s.isEmpty()) return s;//para caso não ter conteúdo
+
+    return s.substring(0, 1).toUpperCase() + s.substring(1);
+  }
+  
+}
+//desafio pediu uma função que retorna uma string com letra maiúscula (não tinha entendido se era completa ou apenas a primeira letra
