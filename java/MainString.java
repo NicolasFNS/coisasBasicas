@@ -116,3 +116,20 @@ public class ToUpperCase {
   
 }
 //desafio pediu uma função que retorna uma string com letra maiúscula (não tinha entendido se era completa ou apenas a primeira letra
+
+///////////////////////////
+public class CharProblem {
+  public static int howOld(String input) { 
+    String[] partes = input.split(" "); 
+    return Integer.parseInt(partes[0]); 
+  }
+}
+//o desafio era uma função que pega uma frase que sempre diz "x anos" retorne e retorna como um número inteiro oprimeiro caractere da string é sempre um número.
+/*
+também dá para usar no lugar algo tipo:
+public class CharProblem {
+  public static int howOld(final String herOld) {
+    return Character.getNumericValue(input.charAt(0));
+  }
+}
+*/
