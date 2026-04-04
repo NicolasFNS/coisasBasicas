@@ -28,7 +28,7 @@
     <div class="field">
 
       <input type="text" name="excluir" id="excluir" placeholder="Digite o ID a excluir" >
-      <input type="submit" name="enviar_excluir" value="Excluir" formaction="deleta.php">
+      <input type="submit" name="enviar_excluir" value="Excluir">
 
     </div>
   </form>
