@@ -1,5 +1,5 @@
 <?php
-    require("conecta.php");
+    require("conectar.php");
 ?>
 <!DOCTYPE html>
 <html>
