@@ -16,3 +16,15 @@ WHERE w.move NOT IN ('Hadoken', 'Shouoken', 'Kikoken') --busca as que não tem u
 GROUP BY f.name --agrupar por nome
 ORDER BY won DESC --agrupor por win de forma decrescente
 LIMIT 6; --limita a consulta a 6 linhas
+
+------------
+SELECT 
+    n,
+    CASE --lógica condicional
+        WHEN n = 0 THEN 0 --se n for 0 res vai ser 0
+        ELSE CAST(CEIL((1 + SQRT(1 + 8 * n)) / 2) AS INTEGER) --se não fz o calculo: 
+  --SQRT calcula raiz quadrada, 
+  --CEIL arredonda para cima, 
+  --CAST(... AS INTEGER) converte para inteiro
+    END AS res --finaliza o CASE e nomeia a coluna como res
+FROM participants;
