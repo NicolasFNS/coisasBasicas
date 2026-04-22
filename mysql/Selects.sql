@@ -28,3 +28,16 @@ SELECT
   --CAST(... AS INTEGER) converte para inteiro
     END AS res --finaliza o CASE e nomeia a coluna como res
 FROM participants;
+
+-------------------
+WITH RECURSIVE fib(n, res1, res2) AS ( --WITH cria uma tabela temporária e RECURSIVE permite que ela use a si mesma
+  SELECT 1, 0::BIGINT, 1::BIGINT --n = 1, res1 = 0, res2 = 1 ::BIGINT força tipo inteiro grande (evita overflow)
+  UNION ALL --junta select + resultados futuros e não remove duplicatas
+  SELECT n + 1, res2, res1 + res2 --n = n+1, res1 = res2, res2 = res1+res2
+  FROM fib
+  WHERE n < (SELECT MAX(n) FROM fibo) --seleciona o maior n da tabela fibo (no desafio n era apenas uma sequência crescente
+)
+SELECT DISTINCT f.n, fib.res1 AS res --DISTINCT remove duplicatas
+FROM fibo f --seleciona de fibo, como se fibo fosse = f (o mesmo que fibo AS f)
+JOIN fib ON fib.n = f.n --junta tabela fibo com tabela calculada fib usando n como chave identificadora
+ORDER BY f.n; --ordena pelo n da tabela original
