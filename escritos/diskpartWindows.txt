@@ -1,0 +1,37 @@
+APAGAR E RESTAURAR PARTIÇÕES/*
+ESTANDO NO PROMPT
+
+"diskpart" para acessar as ferramentas
+
+"list disk"
+
+"select disk x" (substitua x pelo número)
+
+Para remover todas as partições do disco selecionado, digite: "clean"
+
+se quiser algo mais específico "list partition" para ver os números
+
+"select partition X" (substitua X pelo número)
+
+"delete partition" (ou "delete partition override" para forçar a exclusão de partições protegidas).
+
+agora, se você usou "clean" provavelmente agora ele não está alocado
+selecione novamente o dico certo com "select disk x" (substitua x pelo número) e siga os passos:
+
+"create partition primary" definir o tipo da partição como Primária
+
+"format fs=ntfs quick" escolher o tipo de sistema de arquivos
+
+"assign letter=Z" atribui a letra
+*/
+
+
+DISPOSITIVO USB DESCONHECIDO APÓS USO/*
+se o pen drive depois de um tempo de uso for marcado como desconhecido de repente, você pode testar
+ir no gerenciamento de dispositivos e ver se ele aparece lá como dispositivo não reconhecido
+
+apertar para "desinstalar" ele, ir em "ação" e verificar se há alterações de hardware, isso deve fazer ele voltar
+*/
+
+
+
