@@ -1,0 +1,97 @@
+-----------------baixando coisas do ambiente
+1. MySQL, baixei o padrão da oracle:
+
+se quiser do repositório padrão do Fedora sudo dnf install -y mysql-server
+
+se quiser do repositório oficial da Oracle sudo dnf install -y https://dev.mysql.com/get/mysql84-community-release-fc$(rpm -E %fedora)-1.noarch.rpm
+sudo dnf install -y mysql-community-server
+
+ou só sudo dnf insyall mysqld
+
+2. PHP e apache:
+sudo dnf install httpd e depois sudo dnf install php-fpm
+
+-----------------ajeitando mysql
+recuperar a senha temporária do root sudo grep 'temporary password' /var/log/mysql/mysqld.log
+
+se retornar como diretório inexistente pode ser que esteja em outro lugar então sudo grep 'temporary password' /var/log/mysql/mysqld.log
+depois mude o comando de antes, se retornar algo, é a senha padrão, se não tiver nada, a senha padrão é nada mesmo
+
+acessar o mysql -u root -p
+
+para alterar a senha ALTER USER 'root'@'localhost' IDENTIFIED BY 'SuaNovaSenha'; FLUSH PRIVILEGES;
+
+-----------------ajeitando a pasta
+1. Garantir que o `httpd.conf` está com o padrão com sudo nano /etc/httpd/conf/httpd.conf
+
+Confirme que o `DocumentRoot` e o bloco `<Directory>` estão assim:
+
+```
+DocumentRoot "/var/www/html"
+
+<Directory "/var/www/html">
+    Options Indexes FollowSymLinks
+    AllowOverride All
+    Require all granted
+</Directory>
+```
+
+2. Ajustar se der forbidden com sudo chmod -R 755 /var/www/html/WebProjects
+
+2.1 Corrigir o contexto SELinux com sudo restorecon -Rv /var/www/html/WebProjects
+
+3. Reiniciar o Apache com sudo systemctl restart httpd
+
+4. Testar com curl -I http://localhost/WebProjects/
+Deve retornar `HTTP/1.1 200 OK`.
+
+
+URL
+'http://localhost/WebProjects/`
+
+novos projetos, Ao criar uma nova pasta dentro de `WebProjects`:
+sudo restorecon -Rv /var/www/html/WebProjects/novo-projeto
+
+Ou, se preferir rodar de uma vez em tudo:
+sudo restorecon -Rv /var/www/html/WebProjects
+
+-----------------problemas que tive:
+| 403 Forbidden | Contexto SELinux errado | `sudo restorecon -Rv /var/www/html/WebProjects` |
+---
+| 403 Forbidden | Permissão sem `x` | `sudo chmod 755 /var/www/html/WebProjects` |
+---
+| 403 "No matching DirectoryIndex" | Falta `index.html` | Criar `index.html` na pasta |
+---
+|Listagem não aparece | Faltando `Indexes` no `Options` | Adicionar `Indexes` no `<Directory>` e reiniciar |
+---
+| erro movendo arquivo | Faltando permissão de escrita numa pasta que manipula arquivos |
+
+cd /var/www/html/WebProjects/ProjetoWeb4.2/Main/ProjetoWeb --ir até a pasta do projeto
+sudo setfacl -m u:apache:rwx public/admin/images/products --concede ao usuário apache, usado pelo PHP-FPM, permissão para ler, gravar e acessar a pasta que eu quero usar
+sudo semanage fcontext -a -t httpd_sys_rw_content_t \ '/var/www/html/WebProjects/ProjetoWeb4.2/Main/ProjetoWeb/public/admin/images/products(/.*)?' --informou ao SELinux que essa pasta pode ser alterada pelo servidor web (permissão "rw" em httpd_sys_rw_content_t)
+sudo restorecon -Rv public/admin/images/products --aplica o novo contexto SELinux à pasta/arquivos existentes
+sudo -u apache test -w public/admin/images/products && echo "Permissão OK" --simula uma verificação de escrita usando o usuário do apache PHP
+
+melhor prática (pelo o pouco que pesquisei), o ideal é manter:
+diretórios web com 755, arquivos com 644 e só as pastas de upload com ACL + SELinux em modo RW então
+sudo find /pasta_projeto -type d -exec chmod 755 {} \;
+sudo find /pasta_projeto -type f -exec chmod 644 {} \;
+sudo setfacl -R -m u:apache:rwx /pasta_projeto/uploads
+sudo semanage fcontext -a -t httpd_sys_rw_content_t \
+'/pasta_projeto/uploads(/.*)?'
+sudo restorecon -Rv /pasta_projeto/uploads
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

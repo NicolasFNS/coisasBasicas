@@ -1,0 +1,23 @@
+ligar ambiente php e mysql:
+sudo systemctl enable --now php-fpm
+sudo systemctl enable --now httpd
+sudo systemctl enable --now mysqld
+ou
+sudo systemctl enable --now httpd php-fpm mysqld
+desligar:
+sudo systemctl disable --now httpd php-fpm mysqld
+
+ambiente python:
+cd /var/www/html/WebProjects/PythonProjects /* pasta de projeto */
+source PythonProjects/bin/active /* ativa */
+
+status:
+systemctl status httpd php-fpm mysqld
+systemctl is-active httpd php-fpm mysqld
+systemctl is-enabled httpd php-fpm mysqld
+
+explicação:
+sudo systemctl enable --now php-fpm: ativa ferramenta de segurança que faz quando um script PHP travar ou estourar memória, o worker morre e o pool reinicia
+sudo systemctl enable --now httpd: ativa o apache, que recebe as requisições HTTP do navegador
+sudo systemctl enable --now mysqld: ativa o mysql
+curl http://localhost --vê o que o localhost retora (200 ok, erro 400,403 etc.)

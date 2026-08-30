@@ -1,0 +1,11 @@
+1. usar bottles no SSD externo
+
+dê acesso do Bottles ao SSD
+pode fazer isso pelo terminal com:
+flatpak override --user --filesystem=/run/media/Ni/SSD3 com.usebottles.bottle
+
+ou alternativa gráfica
+pode instalar o Flatseal:
+flatpak install flathub com.github.tchx84.Flatseal
+Abra o Flatseal → Bottles → Filesystem → adicione:
+/run/media/Ni/SSD3
