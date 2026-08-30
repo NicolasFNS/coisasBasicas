@@ -1,0 +1,14 @@
+ativar o serviço:
+sudo systemctl enable --now tailscaled
+
+ligar/login:
+sudo tailscale up
+
+logout:
+sudo tailscale logout
+
+desligar:
+tailscale down
+
+status:
+tailscale status

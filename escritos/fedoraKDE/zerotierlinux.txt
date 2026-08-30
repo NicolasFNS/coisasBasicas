@@ -1,0 +1,11 @@
+login:
+sudo zerotier-cli join <seu_id_da_rede>
+
+ligar:
+tailscale connect
+
+desligar:
+tailscale disconnect
+
+status:
+sudo zerotier-cli status
