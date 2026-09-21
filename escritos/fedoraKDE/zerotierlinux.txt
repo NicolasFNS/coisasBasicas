@@ -1,11 +1,22 @@
 login:
 sudo zerotier-cli join <seu_id_da_rede>
 
+ver o ip link para o próximo:
+ip link show
+
 ligar:
-sudo zerotier-cli connect
+sudo ip link set [nome do ip link] up
+sudo ip link set ztpp6e5wdt up
 
 desligar:
-sudo zerotier-cli disconnect
+sudo ip link set [nome do ip link] down
+sudo ip link set ztpp6e5wdt down
 
 status:
 sudo zerotier-cli status
+
+manipular o serviço:
+sudo systemctl status zerotier-one
+sudo systemctl restart zerotier-one
+sudo systemctl stop zerotier-one
+sudo systemctl enable zerotier-one   
