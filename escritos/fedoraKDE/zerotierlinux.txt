@@ -12,6 +12,8 @@ desligar:
 sudo ip link set [nome do ip link] down
 sudo ip link set ztpp6e5wdt down
 
+(mesmo com o down, o status estará como online, mas se ver no gerenciador próprio do zerotier no navefador, ele estará "desativado")
+
 status:
 sudo zerotier-cli status
 
