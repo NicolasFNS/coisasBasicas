@@ -2,10 +2,10 @@ login:
 sudo zerotier-cli join <seu_id_da_rede>
 
 ligar:
-tailscale connect
+sudo zerotier-cli connect
 
 desligar:
-tailscale disconnect
+sudo zerotier-cli disconnect
 
 status:
 sudo zerotier-cli status
